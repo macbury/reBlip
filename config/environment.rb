@@ -20,7 +20,7 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   
-  config.gem 'guillaumegentil-video_info', :lib => 'video_info'
+  config.gem 'guillaumegentil-video_info', :lib => 'video_info', :source => 'http://gems.github.com'
   config.gem "httparty"
   config.gem "searchlogic"
   
