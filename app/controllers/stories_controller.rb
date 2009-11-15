@@ -2,7 +2,7 @@ class StoriesController < ApplicationController
   # GET /stories
   # GET /stories.xml
   def index
-    @stories = Story.paginate :conditions => { :blips_count.gte => 2 }, :order => 'created_at DESC', :per_page => 10, :page => params[:page]
+    @stories = Story.paginate :conditions => { :blips_count.gte => 2 }, :order => 'created_at ASC', :per_page => 10, :page => params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
