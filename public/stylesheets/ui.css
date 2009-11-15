@@ -8,7 +8,8 @@ body {
 	font: 11px/18px "Lucida Grande", verdana, arial, helvetica, sans-serif;
 }
 
-a { color: #469; text-decoration: none; }
+a { color: #469; text-decoration: none; border: 0; }
+a img { border: 0; }
 a:visited { color: #666; }
 a:hover { color: #fff; background-color:#000; }
 
@@ -99,6 +100,7 @@ a:hover { color: #fff; background-color:#000; }
 
 .blip > .asset {
 	float: right;
+	display: block;
 	height: 50px;
 	width: 50px;
 	overflow: hidden;

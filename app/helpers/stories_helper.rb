@@ -10,14 +10,15 @@ module StoriesHelper
   end
   
   def render_asset(blip)
-    out =   case blip.status_type
-              when 'Picture' then image_tag thumb_image(blip.asset_path)
-              when 'Movie' then 'Film' 
-              when 'Recording' then 'Nagranie'
-            end
+    link = nil
+    
+    if blip.status_type == 'Picture'
+      link = image_tag(thumb_image(blip.asset_path))
+      href = blip.asset_path
+    end
             
-    if blip.status_type != 'Status'
-      return content_tag :div, out, :class => 'asset'
+    if link
+      return link_to(link, href, :class => 'asset')
     end
   end
   
@@ -30,7 +31,7 @@ module StoriesHelper
     body.gsub!(/#([a-zA-Z0-9]+)/i, link_to('#\1', 'http://blip.pl/tags/\1', :target => "_blank"))
     body.gsub!(/\^([a-zA-Z0-9]+)/i, link_to('^\1', 'http://\1.blip.pl/', :target => "_blank"))
     
-    return auto_link body.strip
+    return auto_link(body.strip)
   end
   
 end
