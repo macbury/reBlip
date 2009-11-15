@@ -1,2 +1,10 @@
+<h2>
+	<% if params[:query] && !params[:query].empty? %>
+		Dyskusje w których pojawia się <i><%= h params[:query] %></i>
+	<% else %>
+		Ostatnie dyskusje
+	<% end %>
+</h2>
+
 <%= render :partial => @stories %>
 <%= will_paginate @stories %>

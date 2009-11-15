@@ -1,3 +1,3 @@
 $(document).ready(function () {
-	$('.asset').facebox() 
+	$('.popup').facebox() 
 });

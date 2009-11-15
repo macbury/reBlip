@@ -11,14 +11,22 @@ module StoriesHelper
   
   def render_asset(blip)
     link = nil
+    klass = 'asset'
     
     if blip.status_type == 'Picture'
       link = image_tag(thumb_image(blip.asset_path))
-      href = blip.asset_path
+      klass += ' popup'
+    elsif blip.status_type == "Movie"
+      video = VideoInfo.new(blip.asset_path)
+      unless video.thumbnail_url.nil? 
+        link = image_tag(video.thumbnail_url) 
+      else
+        link = ''
+      end
     end
             
     if link
-      return link_to(link, href, :class => 'asset')
+      return link_to(link, blip.asset_path, :class => klass)
     end
   end
   
@@ -30,6 +38,7 @@ module StoriesHelper
     body = blip.body.gsub(/http:\/\/blip\.pl\/s\/([0-9]+)/i, '')
     body.gsub!(/#([a-zA-Z0-9]+)/i, link_to('#\1', 'http://blip.pl/tags/\1', :target => "_blank"))
     body.gsub!(/\^([a-zA-Z0-9]+)/i, link_to('^\1', 'http://\1.blip.pl/', :target => "_blank"))
+    body = highlight(body, params[:query], :highlighter => '<span class="highlight">\1</span>')
     
     return auto_link(body.strip)
   end

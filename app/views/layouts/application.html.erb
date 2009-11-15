@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>reBlip</title>
+	<title>reBlip (BETA)</title>
+	<meta name="viewport" content="width=800" />
 	<%= stylesheet_link_tag 'ui', 'facebox' %>
 	<%= javascript_tag "window._token = '#{form_authenticity_token}'" %>
 	<%= javascript_include_tag 'jquery.min.js', 'rails', 'facebox', 'application' %>
@@ -13,12 +14,13 @@
 <body>
 	<div class="wrapper">
 		<div class="header">
-			<form id="search_form">
-				<input type="text" />
-				<input type="submit" value="Szukaj" />
-			</form>
+			<% form_tag root_path, :id => "search_form", :method => :get do %>
+				<%= text_field_tag "query", params[:query] %>
+				<%= submit_tag "Szukaj" %>
+			<% end %>
 			<h1>
-				reBlip <sup>BETA</sup>
+				<%= link_to 'reBlip', root_path %>
+				<sup>BETA</sup><span> - czyli ostatnie dyskusje na <a href="http://blip.pl">blip.pl</a></span>
 			</h1>
 		</div>
 		
@@ -26,6 +28,18 @@
 			<%= yield %>
 		</div>
 		
+		<div class="footer">
+			reBlip <sup>BETA</sup> &copy; 2009. <span class="right">Aktualna wersja: 0.2.1</span>
+		</div>
 	</div>
+	<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+	try {
+	var pageTracker = _gat._getTracker("UA-11469054-2");
+	pageTracker._trackPageview();
+	} catch(err) {}</script>
 </body>
 </html>

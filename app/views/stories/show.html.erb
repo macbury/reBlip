@@ -1,3 +1,12 @@
 <%= render :partial => @story %>
 
 <%= render :partial => @story.blips %>
+
+<h2>Dołącz do dyskusji:</h2>
+
+<% form_tag "http://blip.pl/dashboard", :method => :get do %>
+	<%= text_area_tag 'body', "http://blip.pl/s/#{@story.blip_id} " %>
+	<p style="text-align: right">
+		<%= submit_tag 'Napisz!' %>
+	</p>
+<% end %>

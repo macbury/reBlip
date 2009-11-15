@@ -3,7 +3,7 @@ class Story < ActiveRecord::Base
   xss_terminate
   
   def to_param
-    self.blip_id.to_s
+    self.blip_id.to_s(32)
   end
   
   def add_asset(data)
