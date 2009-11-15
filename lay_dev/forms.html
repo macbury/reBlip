@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+   
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>index</title>
+	<link rel="stylesheet" href="stylesheets/ui.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<script src="javascripts/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="javascripts/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="javascripts/application.js" type="text/javascript" charset="utf-8"></script>
+	
+</head>
+<body>
+	<div class="header">
+		<h1><a href="/">HTS</a></h1>
+
+		<div class="side">
+			<a href="/register">Strona główna</a>
+			<a href="/register">Rejestracja</a>
+			<a href="/about">Grupy</a>
+			<a href="/login">Logowanie</a>
+			<a href="/login">Dodaj link</a>
+			<form action="/search">
+				<input type="text" name="s" id="top-keywords" />
+			</form>
+		</div>
+	</div
+	
+	<div class="wrapper">
+		
+		<div class="content">
+			<div class="breadcrumb">
+				<a href="#">Użytkownicy</a>
+				<a href="/all">Rejestracja</a>
+			</div>
+			
+			<form action="forms_submit" method="get" accept-charset="utf-8">
+				<fieldset>
+					<legend>Rejestracja w serwisie:</legend>
+					
+					<h2>1. Utwórz konto używając Facebook Connect</h2>
+					
+					<p>
+						<a href="#">
+							<img src="http://wiki.developers.facebook.com/images/f/f5/Connect_white_large_long.gif" alt="" />
+						</a>
+					</p>
+					
+					<h2>2. Utwórz konto używając OpenID</h2>
+					
+					<p>
+						<input type="text" name="some_name" value="" />
+					</p>
+					
+					<h2>3. Utwórz konto normalnie</h2>
+					
+					<div class="button">
+						<input type="submit" value="Rejestruj!">
+					</div>
+				</fieldset>
+
+				
+			</form>
+			
+		</div>
+		
+		<div class="footer">
+			HTS &copy; 2009
+			<span class="right">
+				<a href="/register">Strona główna</a> | 
+				<a href="/register">Rejestracja</a> | 
+				<a href="/about">Grupy</a> | 
+				<a href="/login">Logowanie</a>
+			</span>
+		</div>
+	</div>
+
+</body>
+</html>

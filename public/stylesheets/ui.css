@@ -1,0 +1,86 @@
+body { 
+	color: #333; 
+	margin: 0;
+	padding: 0;
+	background: #fff ;
+	min-width: 985px;
+	text-align: left;
+	font: 11px/18px "Lucida Grande", verdana, arial, helvetica, sans-serif;
+}
+
+a { color: #469; text-decoration: none; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
+
+/* wrapper */
+
+.wrapper {
+	margin: 0px auto;
+	width: 982px;
+}
+
+.wrapper > .header {
+	background-color: white;
+	border: 1px solid #F60;
+	-webkit-border-radius: 4px;
+	clear: both;
+	color: #666;
+	margin: 10px 0;
+	padding: 5px 10px 10px 60px;
+	background: #fff url('../images/logo-mini.png') no-repeat 5px center;
+}
+
+/* header */
+
+.header > h1 {
+	margin: 0;
+	font-size: 18px;
+}
+
+.header > h1 > sup {
+	font-size: 12px;
+	color: red;
+	font-weight: bold;
+}
+
+.header > form {
+	float: right;
+}
+
+/* blips */
+
+.blip {
+	min-height: 50px;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+	border-bottom: 1px dashed #ddd;
+}
+
+.blip > .avatar {
+	position: absolute;
+	overflow: hidden;
+	width: 50px;
+	height: 50px;
+}
+
+.blip > .body, .blip > .bar {
+	margin-left: 60px;
+}
+
+.blip > .body {
+	min-height: 35px;
+	font-size: 13px;
+}
+
+.blip > .asset {
+	float: right;
+	height: 50px;
+	width: 50px;
+	overflow: hidden;
+}
+
+.blip:last-child { border-bottom: 0px; }
+
+.reBlip {
+	margin-left: 30px !important;
+}

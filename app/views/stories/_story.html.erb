@@ -1,0 +1,14 @@
+<div class="blip">
+	<div class="avatar">
+		<%= image_tag "http://blip.pl#{story.avatar_path}" %>
+	</div>
+	<div class="asset">
+		<%= render_asset(story) %>
+	</div>
+	<div class="body">
+		<%= format_blip story %>
+	</div>
+	<div class="bar">
+		Przez: <%= link_to story.author, "http://blip.pl/users/#{story.author}/dashboard" %> | <%= link_to 'Odpowiedzi', story %>: <%= story.blips_count %> | <%= generuj_typ(story) %> | <%= distance_of_time_in_words_to_now story.created_at %> temu
+	</div>
+</div>

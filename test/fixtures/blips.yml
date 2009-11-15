@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  story_id: 1
+  author: MyString
+  avatar_path: MyString
+  body: MyString
+  blip_id: 1
+
+two:
+  story_id: 1
+  author: MyString
+  avatar_path: MyString
+  body: MyString
+  blip_id: 1
