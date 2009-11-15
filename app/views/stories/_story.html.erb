@@ -2,9 +2,7 @@
 	<div class="avatar">
 		<%= image_tag "http://blip.pl#{story.avatar_path}" %>
 	</div>
-	<div class="asset">
-		<%= render_asset(story) %>
-	</div>
+	<%= render_asset(story) %>
 	<div class="body">
 		<%= format_blip story %>
 	</div>

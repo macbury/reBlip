@@ -10,11 +10,15 @@ module StoriesHelper
   end
   
   def render_asset(blip)
-    return  case blip.status_type
+    out =   case blip.status_type
               when 'Picture' then image_tag thumb_image(blip.asset_path)
               when 'Movie' then 'Film' 
               when 'Recording' then 'Nagranie'
             end
+            
+    if blip.status_type != 'Status'
+      return content_tag :div, out, :class => 'asset'
+    end
   end
   
   def thumb_image(path)

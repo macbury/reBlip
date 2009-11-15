@@ -10,9 +10,13 @@ class Blip < ActiveRecord::Base
     if data['pictures']
       blip.status_type = "Picture"
       blip.asset_path = data['pictures'][0]['url']
-    elsif data['movies']
+    elsif data['movies'] || data['body'] =~ /(http:\/\/www\.youtube\.com\/watch\?v=[a-zA-Z0-9]+)/i
       blip.status_type = "Movie"
-      blip.asset_path = data['movies'][0]['url']
+      if $1.nil?
+        blip.asset_path = data['movies'][0]['url']
+      else
+        blip.asset_path = $1
+      end
     elsif data['recording']
       blip.status_type = "Recording"
       blip.asset_path = data['recording'][0]['url']

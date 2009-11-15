@@ -47,6 +47,31 @@ a:hover { color: #fff; background-color:#000; }
 	float: right;
 }
 
+.header > form > input[type=text] {
+	width: 200px;
+	padding: 5px;
+	border: 1px solid #F60;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+	margin-top: 1px;
+}
+
+.header > form > input[type=submit] {
+	background: #F60;
+	border: 1px solid #F60;
+	color: #fff;
+	font-weight: bold;
+	margin: 0 0 0 -4px;
+	padding: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+}
+
+.header > form > input[type=submit]:active {
+	background: #fff;
+	color: #F60;
+}
+
 /* blips */
 
 .blip {
@@ -77,7 +102,11 @@ a:hover { color: #fff; background-color:#000; }
 	height: 50px;
 	width: 50px;
 	overflow: hidden;
+	border: 1px solid #fff;
+	cursor: pointer;
 }
+
+.blip > .asset:hover { border-color: #000; }
 
 .blip:last-child { border-bottom: 0px; }
 

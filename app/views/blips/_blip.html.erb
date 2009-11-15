@@ -2,9 +2,7 @@
 	<div class="avatar">
 		<%= image_tag "http://blip.pl#{blip.avatar_path}" %>
 	</div>
-	<div class="asset">
-		<%= render_asset(blip) %>
-	</div>
+	<%= render_asset(blip) %>
 	<div class="body">
 		<%= format_blip blip %>
 	</div>
