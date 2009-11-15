@@ -3,7 +3,7 @@ class BlipApi
    base_uri "api.blip.pl" 
    #basic_auth "user", "pass" 
    format :json 
-   headers "Accept" => "application/json", "User-Agent" => "ReBlip 0.1 ALPHA", "X-Blip-api" => "0.02"
+   headers "Accept" => "application/json", "User-Agent" => "ReBlip 0.2.1 BETA", "X-Blip-api" => "0.02"
    
    def self.start
      Thread.new do

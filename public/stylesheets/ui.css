@@ -155,3 +155,23 @@ textarea {
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
 }
+
+/* Filter */
+
+.filter > a { 
+	padding: 3px 5px; 
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	background: #F60;
+	color: #fff;
+	font-weight: bold;
+}
+
+.filter > a:hover { background: #FF583A; }
+
+.filter > .selected {
+	padding: 3px 5px;
+	background: #fff !important;
+	color: #F60;
+	border: 1px solid #F60;
+}

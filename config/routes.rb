@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  
+  map.connect '/stories/:sort/:page/', :action => 'index', :controller => 'stories'
   #map.connect '/d/:id', :controller => 'stories', :action => 'show'
   map.resources :stories
   # The priority is based upon order of creation: first created -> highest priority.
