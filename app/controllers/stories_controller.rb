@@ -20,7 +20,7 @@ class StoriesController < ApplicationController
       options[:select] = 'distinct stories.*'
     elsif !params[:filter].nil? && params[:filter] != 'newest'
       f = params[:filter]
-      min_blips = 4
+      min_blips = 10
       
       if f == 'day'
         from = Date.current.at_beginning_of_day
@@ -33,7 +33,7 @@ class StoriesController < ApplicationController
         to = Date.current.end_of_month.to_datetime
       end
       
-      options[:conditions] = ["blips_count > ? AND (stories.created_at >= ? AND stories.created_at <= ?)", min_blips, from, to]
+      options[:conditions] = ["blips_count >= ? AND (stories.created_at >= ? AND stories.created_at <= ?)", min_blips, from, to]
       options[:order] = 'blips_count DESC'
     end
     
