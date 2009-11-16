@@ -38,7 +38,7 @@ class BlipApi
       raw_story = story_line[0]
       story_line.delete_at(0)
       
-      next if story_line.size < 1
+      next if story_line.size < 2
       
       story = Story.find_or_initialize_by_blip_id(raw_story['id'])
 
