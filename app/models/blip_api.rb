@@ -72,9 +72,10 @@ class BlipApi
      array ||= []
      array << status
      
-     if status['body'] =~ /http:\/\/blip\.pl\/s\/([0-9]+)/i
+     if status['body'] =~ /http:\/\/blip\.pl\/s\/([0-9]+)|http:\/\/www\.blip\.pl\/s\/([0-9]+)/i
        begin
-         data = get("/statuses/#{$1}?include=user,user[avatar],recording,pictures,movies")
+         id = $1 || $2
+         data = get("/statuses/#{id}?include=user,user[avatar],recording,pictures,movies")
          return BlipApi.create_story_line(data, array)
        rescue Exception => e
          return array
