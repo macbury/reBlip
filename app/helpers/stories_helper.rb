@@ -38,6 +38,9 @@ module StoriesHelper
     body = blip.body.gsub(/http:\/\/blip\.pl\/s\/([0-9]+)/i, '')
     body.gsub!(/http:\/\/www\.blip\.pl\/s\/([0-9]+)/i, '')
     body.gsub!(/#([a-zA-Z0-9]+)/i, link_to('#\1', 'http://blip.pl/tags/\1', :target => "_blank"))
+    body.gsub!('\u003C', '"')
+    body.gsub!('\u003E', '"')
+    
     body.gsub!(/\^([a-zA-Z0-9]+)/i, link_to('^\1', 'http://\1.blip.pl/', :target => "_blank"))
     body = highlight(body, params[:query], :highlighter => '<span class="highlight">\1</span>')
     
